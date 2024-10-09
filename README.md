@@ -1,4 +1,4 @@
-# Advanced RAG (Retrival Augmented Generation using multi sources: PDF, URL, VIDEO, AUDIO, IMAGE
+ # Advanced RAG (Retrival Augmented Generation using multi sources: PDF, URL, VIDEO, AUDIO, IMAGE
 ### How does it work ?
 #### 1. sources (each source is converted into text): 
 - PDF: extract the text from the PDF
@@ -31,22 +31,51 @@ These relevants informations are passed into the prompts as a context : example 
 ### How to run the app
 
 #### 1. Clone the project
+```sh
 git clone https://github.com/ngamcode96/advanced_rag_chatbot.git
-
+```
 #### 2. Copy .env.example to .env file
-  Add values for variables environnment
+```sh
+cp .env.example .env
+```  
+  And add values for variables environnment
   
 #### 3. Create virtual environment and install requirements
-  python3 -m venv venv (to create virtual environment)
-  source venv/bin/activate (for linux) or venv/Scripts/activate (for windows) 
-  pip install -r requirements.txt (to install all requirements
+- To create virtual environment 
+```sh
+python3 -m venv venv 
+``` 
+To activate the virtual environment
+- For linux
+```sh
+source venv/bin/activate 
+```  
 
-#### 4. Install Qdrant locally using docker
+- For windows
+```sh
+venv/Scripts/activate
+```  
+
+To install all requirements
+
+```sh
+pip install -r requirements.txt
+```  
+
+
+#### 4. Install Qdrant locally using docker and run it
+```sh
 sudo docker pull qdrant/qdrant 
 sudo docker run -p 6333:6333 -v .:/qdrant/storage qdrant/qdrant
+```  
 
 #### 5. finally run the app
+```sh
 streamlit run app.py
-  
+```  
 
 
+
+
+   
+   
